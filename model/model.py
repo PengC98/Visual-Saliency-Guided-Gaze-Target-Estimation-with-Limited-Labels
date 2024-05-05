@@ -5,7 +5,7 @@ import torch.nn as nn
 from torch.nn import init
 
 import resnet_scene
-from head_pose.hopenet import Hopenet
+
 import torchvision
 
 
@@ -105,13 +105,6 @@ class Sence_B(nn.Module):
 		heat = self.sigmoid(heat)
 		return heat,patch_pred
 
-
-
-def hopenet():
-	model = Hopenet(torchvision.models.resnet.Bottleneck, [3, 4, 6, 3], 66)
-	saved_state_dict = torch.load('hopenet_robust_alpha1.pkl')
-	model.load_state_dict(saved_state_dict)
-	return model
 
 
 def init_weights(net, init_type='normal', init_gain=0.02):
