@@ -1,0 +1,3 @@
+scope: 'cyclegan'
+dir_checkpoint: './checkpoints'
+dir_log: './log'
