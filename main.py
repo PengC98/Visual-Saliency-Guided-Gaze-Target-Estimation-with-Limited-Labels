@@ -6,16 +6,16 @@ from train import *
 
 from PIL import Image
 
-parser = argparse.ArgumentParser(description='Train the CycleGAN network',
+parser = argparse.ArgumentParser(description='Train the gaze target estimation network',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--gpu_ids', default='1', dest='gpu_ids')
 
 parser.add_argument('--mode', default='test', choices=['train', 'test', 'train_leaky'], dest='mode')
 parser.add_argument('--train_continue', default='on', choices=['on', 'off'], dest='train_continue')
 
-parser.add_argument('--dir_checkpoint', default='/DATA/cp/gazek/checkpoints', dest='dir_checkpoint')
+parser.add_argument('--dir_checkpoint', default='/DATA/cp/gaze/checkpoints', dest='dir_checkpoint')
 parser.add_argument('--dir_log', default='/DATA/cp/gaze/log', dest='dir_log')
-parser.add_argument('--scope', default='cyclegan', dest='scope')
+parser.add_argument('--scope', default='gte', dest='scope')
 parser.add_argument('--name_data', type=str, default='GazeFollow', dest='name_data')
 parser.add_argument('--dir_data', default='/DATA/cp/gazefollow_extended', dest='dir_data')
 
